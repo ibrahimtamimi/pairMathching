@@ -1,0 +1,19 @@
+{
+  "name": "pairmatching",
+  "version": "1.0.0",
+  "description": "it is small program to random the student to work in pair",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimtamimi/pairMathching.git"
+  },
+  "author": "Ibrahim Tamimi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrahimtamimi/pairMathching/issues"
+  },
+  "homepage": "https://github.com/ibrahimtamimi/pairMathching#readme"
+}
