@@ -1,9 +1,19 @@
-var helpers = require('./helpers.js'); 
+var helpers = require('./helpers.js');
+var dataBase = require ('../dataBase/dataBase.js')
+var student = require('../dataBase/student/studentController.js');
 
 module.exports = function (app, express) {
-
-	//	app.post('/api/userTest/insertMindSet', userTest.insertMindSet);
-
+	//============================================================================
+	/* 								student routes 								*/
+	//============================================================================	
+		app.post('/api/student/addStudent', student.addStudent);
+		app.get('/api/student/getAllStudent', student.getAllStudent);
+	
+	//============================================================================
+	/* 								history  								*/
+	//============================================================================	
+		//app.post('/api/dataBase/testConnection', dataBase.testConnection);
+	
 	//============================================================================
 	/* 								erorr case  								*/
 	//============================================================================	

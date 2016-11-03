@@ -1,6 +1,7 @@
+var Sequelize = require('sequelize');
 var db = require('../dataBase.js');
 
-var User = db.define('user', {
+var Student = db.define('Student', {
   firstName: {
     type: Sequelize.STRING,
     field: 'first_name' 
@@ -11,3 +12,5 @@ var User = db.define('user', {
 }, {
   freezeTableName: true 
 });
+
+module.exports = Student;

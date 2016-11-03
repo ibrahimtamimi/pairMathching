@@ -1,10 +1,25 @@
-var studentModel = require('./studentModel.js');
+var student = require('./studentModel.js');
+var db = require('../dataBase.js');
 
-studentModel.sync({force: true}).then(function () {
-  // Table created
-  return studentModel.create({
-    firstName: 'John',
-    lastName: 'Hancock'
-  });
-});
+
+module.exports = {
+
+	addStudent : function (req, res) {
+		student.sync({force: false}).then(function () {
+		  // Table created
+		  return student.create({
+		    firstName: 'John1',
+		    lastName: 'Hancock'
+		  });
+		});
+		res.json('student created' )
+	},
+
+	getAllStudent : function (req, res) {
+		student.findAll().then(function(student) {
+		  res.json({student : student})
+		})
+	}
+ 
+}
 
