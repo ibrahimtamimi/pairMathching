@@ -1,16 +1,20 @@
-var sequelize = new Sequelize('database', 'username', 'password', {
-  host: 'localhost',
-  dialect: 'sqlite',
+//=============================================================================
+/* 									connection								 */
+//=============================================================================
+	var sequelize = new Sequelize('database', 'username', 'password', {
+	  host: 'localhost',
+	  dialect: 'sqlite',
 
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
+	  pool: {
+	    max: 5,
+	    min: 0,
+	    idle: 10000
+	  },
 
-  // SQLite only
-  storage: 'database.sqlite'
-});
+	  // SQLite only
+	  storage: 'database.sqlite'
+	});
 
 module.exports = sequelize;
+
 
