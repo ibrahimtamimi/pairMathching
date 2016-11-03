@@ -8,6 +8,8 @@ module.exports = function (app, express) {
 	//============================================================================	
 		app.post('/api/student/addStudent', student.addStudent);
 		app.get('/api/student/getAllStudent', student.getAllStudent);
+		app.get('/api/student/getStudent', student.getStudent);
+		app.get('/api/student/deleteStudent', student.deleteStudent);
 	
 	//============================================================================
 	/* 								history  								*/

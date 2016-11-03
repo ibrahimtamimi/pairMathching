@@ -6,10 +6,9 @@ module.exports = {
 
 	addStudent : function (req, res) {
 		student.sync({force: false}).then(function () {
-		  // Table created
 		  return student.create({
-		    firstName: 'John1',
-		    lastName: 'Hancock'
+		    firstName: req.body.firstName,
+		    lastName: req.body.lastName
 		  });
 		});
 		res.json('student created' )
@@ -17,9 +16,28 @@ module.exports = {
 
 	getAllStudent : function (req, res) {
 		student.findAll().then(function(student) {
-		  res.json({student : student})
+		  res.json({student : student});
+		})
+	},
+	getStudent : function (req, res) {
+		student.findAll({
+		  where: {
+		    id: req.body.id
+		  }
+		})
+		.then(function(student) {
+			res.json({student : student});	
+		})	
+	},
+	deleteStudent : function (req, res) {
+		student.destroy({
+		  where: {
+		    id: req.body.id
+		  }
+		})
+		.then(function (student) {
+			res.json({student : student});	
 		})
 	}
- 
 }
 
