@@ -10,8 +10,10 @@ module.exports = {
 		    firstName: req.body.firstName,
 		    lastName: req.body.lastName
 		  });
-		});
-		res.json('student created' )
+		})
+		.then(function (state) {
+			res.json(state )
+		})
 	},
 
 	getAllStudent : function (req, res) {

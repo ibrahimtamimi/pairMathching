@@ -3,7 +3,7 @@ var db = require('../dataBase.js');
 var history = require('../History/historyModel.js');
 
 var dayBord = db.define('dayBord', {
-  dayBord : {
+  dayBordNum : {
   	type : Sequelize.INTEGER
   },
   driver: {
