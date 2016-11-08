@@ -1,12 +1,21 @@
-angular.module('pairMatching',[
-  'pairMatching.servics',
+angular.module('PairMatching',[
+  'PairMatching.servics',
+  'PairMatching.student',
   'ngRoute'
 ])
+.controller('headerController', function ($scope, $window, $location, Student, History, DayBord) {
+
+  var test = function (argument) {
+    console.log(Student.getAllStudent())
+  }
+
+})
+
 .config(function($routeProvider, $httpProvider){
 	$routeProvider
   .when('/',{
     templateUrl:'app/index.html',
-    controller:'AuthController'
+    controller:'headerController'
   })
   .otherwise('/')
   
@@ -16,7 +25,7 @@ angular.module('pairMatching',[
 .factory('AttachTokens',function($window){
 	var attach = {
     request: function (object) {
-      var jwt = $window.localStorage.getItem('com.pairMatching');
+      var jwt = $window.localStorage.getItem('com.PairMatching');
       if (jwt) {
         object.headers['x-access-token'] = jwt;
       }
