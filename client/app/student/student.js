@@ -1,4 +1,4 @@
-angular.module('pairMatching.student',[])
+angular.module('PairMatching.student',[])
 .controller('StudentController',function($scope, $window, $location, Student, History, DayBord){
 	$scope.tab = 1;
 	

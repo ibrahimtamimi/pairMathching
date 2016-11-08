@@ -1,4 +1,4 @@
-angular.module('pairMatching.servics',[])
+angular.module('PairMatching.servics',[])
 
 //===================================================================
 /*							student factory 	     			   */
