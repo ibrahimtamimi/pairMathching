@@ -2,8 +2,56 @@
 <html ng-app='PairMatching'>
 <head>
 	<title>main</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<script
+		  src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+		  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+		  crossorigin="anonymous"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body ng-controller="HeaderController">
+	
+	<p class="btn btn-default" data-toggle="collapse" data-target="#infoDatadiv7">video</p>
+	<div  class="collapse" id="infoDatadiv7" class="modal-body-video">
+	<iframe  width="420" height="345" ng-src='https://www.youtube.com/embed/3O1_3zBUKM8'></iframe>
+	</div>
+
+	<script>
+		$('.video_layer').colorbox({iframe:true});
+	</script>
+
+	<div>
+	  <button class="btn btn-default" data-toggle="collapse" data-target="#infoDatadiv">add Student</button>
+	  <button class="btn btn-default" data-toggle="collapse" data-target="#showStudent" ng-click="drawStudent()">get student</button>
+	</div>
+	<div class="collapse" id="infoDatadiv" >
+		<input  class="infoData" type="textbox" placeholder="First Name" ng-model="studentData.firstName">
+		<input  class="infoData" type="textbox" placeholder="Last Name"  ng-model="studentData.lastName">
+		<button class="btn btn-default"   ng-click="addStudent()"> add</button>
+	</div>
+
+
+	<div class="collapse" id="showStudent">
+		<table class="table table-condensed">
+			<thead>
+				<tr ng-if='allStudent.student.length > 0'>
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="obj in allStudent.student">
+					<td>{{obj.firstName}}</td>
+					<td>{{obj.lastName}}</td>
+					<td>{{obj.id}}</td>
+				</tr>
+			</tbody>
+		 </table>
+	</div>
 
 	<div ng-view></div>
 
