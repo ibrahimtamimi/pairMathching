@@ -17,7 +17,6 @@ var Sequelize = require('sequelize');
 	  storage: 'database.sqlite'
 	});
 
-	
 	// testConnection : function (req, res) {
 	// 	db
 	// 	  .authenticate()

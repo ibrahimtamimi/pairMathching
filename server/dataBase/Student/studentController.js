@@ -31,6 +31,7 @@ module.exports = {
 			res.json({student : student});	
 		})	
 	},
+
 	deleteStudent : function (req, res) {
 		student.destroy({
 		  where: {
@@ -40,6 +41,14 @@ module.exports = {
 		.then(function (student) {
 			res.json({student : student});	
 		})
+	},
+
+	deleteAllStudent : function (req, res) {
+		student.destroy({
+		    where: {}
+		}).then(function (resp) {
+			res.json({resp : resp})
+		});
 	}
 }
 

@@ -12,6 +12,7 @@ module.exports = function (app, express) {
 		app.get('/api/student/getAllStudent', student.getAllStudent);
 		app.post('/api/student/getStudent', student.getStudent);
 		app.post('/api/student/deleteStudent', student.deleteStudent);
+		app.post('/api/student/deleteAllStudent', student.deleteAllStudent)
 	
 	//============================================================================
 	/* 									history  								*/
