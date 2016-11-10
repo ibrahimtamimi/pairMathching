@@ -1,4 +1,4 @@
-angular.module('PairMatching.servics',[])
+angular.module('PairMatching.services',[])
 
 //===================================================================
 /*							student factory 	     			   */
@@ -9,7 +9,7 @@ angular.module('PairMatching.servics',[])
 			return $http({
 				method:'POST',
 				url:'/api/student/addStudent',
-				data:data
+				data : data
 			}).then(function(resp){
 				return resp.data;
 			});
@@ -20,7 +20,7 @@ angular.module('PairMatching.servics',[])
 				method : 'GET',
 				url : '/api/student/getAllStudent'
 			}).then(function(resp){
-				return resp;
+				return resp.data;
 			});
 		};
 
